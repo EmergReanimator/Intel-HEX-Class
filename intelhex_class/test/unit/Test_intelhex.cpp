@@ -68,6 +68,28 @@ TEST_F(TestIntelHex, endAddress)
 }
 
 
+TEST_F(TestIntelHex, LM032L)
+{
+    intelhex classTest;
+
+    // Create an input stream
+    {
+        std::ifstream intelHexInput;
+        intelHexInput.open("../../../ihclassTest/hex/LM032L.HEX", ifstream::in);
+
+        intelHexInput >> classTest;
+
+        intelHexInput.close();
+    }
+
+    unsigned long Addr = classTest.currentAddress();
+    EXPECT_EQ(Addr, 348UL);
+
+    size_t Size = classTest.size();
+    EXPECT_EQ(Size, 348UL);
+}
+
+
 }  // namespace
 
 // Step 3. Call RUN_ALL_TESTS() in main().

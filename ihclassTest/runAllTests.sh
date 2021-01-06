@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-files=`ls ./hex/*.hex` 
+files=`ls ./hex/*.[hH][eE][xX]` 
 
 for inp in $files; do
 	out="${inp##*/}"

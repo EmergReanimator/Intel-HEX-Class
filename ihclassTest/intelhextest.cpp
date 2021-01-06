@@ -19,7 +19,7 @@ void usage()
 
 int main(int argc, char *argv[])
 {
-    // Create an input stream
+  // Create an input stream
   std::ifstream intelHexInput;
 
   // Create an output stream
