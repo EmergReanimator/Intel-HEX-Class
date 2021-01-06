@@ -1,14 +1,18 @@
+
 all: intelhextest
  
 # $@ matches the target; $< matches the first dependent
 intelhextest: intelhextest.o intelhexclass.o
-	g++ -o $@ intelhextest.o intelhexclass.o
+	g++ -g -Og -o $@ intelhextest.o intelhexclass.o
 
 intelhextest.o: intelhextest.cpp
-	g++ -c $<
+	g++ -g -Og -c $<
 
 intelhexclass.o: ../intelhex_class/intelhexclass.cpp
-	g++ -c $<
+	g++ -g -Og -c $<
      
+test:
+	$(shell ${PWD}/runAllTests.sh)
+
 clean:
-	rm intelhextest intelhextest.o intelhexclass.o
+	-rm -f intelhextest intelhextest.o intelhexclass.o
